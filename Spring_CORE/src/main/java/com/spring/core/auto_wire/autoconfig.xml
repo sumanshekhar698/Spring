@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+ ">
+ 
+ <bean class="com.spring.core.auto_wire.Address"
+ name="address1"
+ p:street="Kalikapoor"
+ p:city="Delhi"
+ p:pin="700107"/>
+
+<bean class="com.spring.core.auto_wire.Address"
+ name="address"
+ p:street="Doranda"
+ p:city="Ranchi"
+ p:pin="800107"/>
+
+<!-- we will use auto-wiring here -->
+<!-- 1) it will search for name "address" in existing bean -->
+<!-- 	so it need to be taken care while matching -->
+ <bean class="com.spring.core.auto_wire.Worker" name="w1"
+ autowire="byName"
+ />
+<!-- autowire="byType" -->
+<!-- autowire="byName" -->
+<!-- autowire="constructor" -->
+<!-- when using byType ensure only 1 type matches  -->
+</beans>

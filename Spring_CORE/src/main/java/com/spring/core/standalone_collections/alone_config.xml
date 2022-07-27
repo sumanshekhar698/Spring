@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd
+ ">
+ 
+<!--  my list stand-alone custom list -->
+ 
+ <!--   list-class="java.util.Vector" -->
+ 
+ <util:list 
+ list-class="java.util.LinkedList"
+ id="mybestfriends">
+ 
+  	<value>Suman</value>
+  	<value>Satyam</value>
+  	<value>Sukanya</value>
+  	<value>Apurv</value>
+  	<value>Ashutosh</value>
+  	<value>Nitish</value>
+  	<value>Soumadeep</value>
+  <value>null</value>
+  
+ </util:list>
+  <!-- this is our 1st bean  -->
+ 
+  <util:map map-class="java.util.TreeMap" id="fees">
+<!--  TreeMap is used for key wise sorting -->
+<!--  <util:map map-class="java.util.HashMap" id="fees"> -->
+ 	<entry key="Spring Core" value="8000"/>
+  	<entry key="Django" value="6000"/>
+  	<entry key="React" value="5000"/>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </util:map>
+ 
+<!--  Properties is a class extending Hashtable -->
+ <util:properties id="props">
+ 
+ 	<prop key="college">HIT</prop>
+ 	<prop key="branch">Chemical</prop>
+ 	<prop key="since">2015</prop>
+ 
+ </util:properties>
+ 
+ 
+ 
+ 
+ <!-- this is our 1st bean for Person -->
+<bean class="com.spring.core.standalone_collections.Person" 
+name="p1">
+	<property name="friends">
+		<ref bean="mybestfriends"/>
+	</property>
+	<!-- using self closing property tag & reusing the Linkedlist-->
+	<property name="feeStructure" ref="fees"/>
+	<property name="props" ref="props"/>
+	
+</bean>
+
+<bean class="com.spring.core.standalone_collections.Person" 
+name="p2">
+	<property name="friends" ref="mybestfriends"/>
+	<property name="props" ref="props"/>
+	<property name="feeStructure" ref="fees"/>
+</bean>
+</beans>

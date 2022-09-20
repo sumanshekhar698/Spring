@@ -7,9 +7,8 @@ import java.util.Properties;
 public class Person {
 
 	private List<String> friends;
-	private Map<String,Integer> feeStructure;
+	private Map<String, Integer> feeStructure;
 	private Properties props;
-
 
 	public Properties getProps() {
 		return props;
@@ -31,16 +30,15 @@ public class Person {
 		return friends;
 	}
 
-
-@Override
+	@Override
 	public String toString() {
-		return "Person [friends=" + friends + ",\nfeeStructure=" + feeStructure + "]\n"+"Properties ->"+props+"\n";
+		return "Person [friends=" + friends + ",\nfeeStructure=" + feeStructure + "]\n" + "Properties ->" + props
+				+ "\n";
 	}
 
-	//	we will use setter injection
+	// we will use setter injection
 	public void setFriends(List<String> friends) {
 		this.friends = friends;
 	}
-	
-	
+
 }

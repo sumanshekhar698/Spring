@@ -8,27 +8,25 @@
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/beans/spring-context.xsd">
 
-
 	<!-- this is our B bean -->
-	<bean class="com.spring.core.reference.B" name="bref">
+	<bean class="com.spring.core.injecting_reference.B" name="bref">
 		<property name="y" value="25" />
 	</bean>
 
-	<!-- this is for our A bean -->
-	<bean class="com.spring.core.reference.A" name="aref1">
+	<!-- this is for our A bean and we will inject B obj reference -->
+	<bean class="com.spring.core.injecting_reference.A" name="aref1">
 		<property name="x" value="24" />
 
 		<!-- <property name="obj"> -->
 		<!-- <ref bean="bref"/> -->
 		<!-- </property> -->
 
-		<!-- new way -->
+		<!-- new way #inline -->
 		<property name="obj" ref="bref" />
 	</bean>
 
 	<!-- using p Schema -->
-	<bean class="com.spring.core.reference.A" name="aref2" p:x="25"
-		p:obj-ref="bref" />
-
-
+	<bean class="com.spring.core.injecting_reference.A" name="aref2"
+		p:x="25" p:obj-ref="bref" />
+	<!-- p:obj-ref is telling obj is of ref type -->
 </beans>

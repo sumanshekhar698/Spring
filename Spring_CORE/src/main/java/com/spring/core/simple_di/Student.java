@@ -1,4 +1,4 @@
-package com.spring.core.springcore;
+package com.spring.core.simple_di;
 
 public class Student {
 	private int studentId;
@@ -21,7 +21,6 @@ public class Student {
 
 	public Student() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Student(int studentId, String studentName, String studentAddress) {
@@ -36,6 +35,7 @@ public class Student {
 	}
 
 	public void setStudentName(String studentName) {
+//		System.out.println("====> setting name");
 		this.studentName = studentName;
 	}
 

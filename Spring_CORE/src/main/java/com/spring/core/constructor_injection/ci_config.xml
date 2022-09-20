@@ -11,29 +11,26 @@
 
 
 	<!-- this is our 1st bean for Certi using C-schema -->
-	<bean class="com.spring.core.constructor_injection.Certi" name="cert"
-		c:name="JAVA-OCJB">
+	<bean class="com.spring.core.constructor_injection.Certi"
+		name="cert" c:name="JAVA-OCJB">
 		<!-- <constructor-arg value="Spring WEB"/> -->
 	</bean>
 
 	<!-- this is our 1st bean for Person -->
-	<bean class="com.spring.core.ci.Person" name="person1">
-
-		<!-- <bean class="com.springcore.constructor_injection.Person" name="Person" -->
-		<!-- c:name="Suman" c:age="20" c:certi-ref="certi"> -->
+	<bean class="com.spring.core.constructor_injection.Person"
+		name="person1">
 
 		<constructor-arg>
 			<value>Suman</value>
 		</constructor-arg>
-		
+
 		<!-- <constructor-arg value="18"/> -->
 		<!-- It will automatically convert compatible String to int. -->
 		<!-- but we can explicitly specify also the type -->
 		<!-- its a good habit to define the type explicitly -->
 		<!-- because it will avoid ambiguity in multiple constructors -->
-		
+
 		<constructor-arg value="18" type="int" />
-		<!-- here we cannot use p-type, instead we use c-type schema -->
 		<constructor-arg ref="cert" />
 		<constructor-arg type="java.util.List">
 			<list>
@@ -42,16 +39,25 @@
 				<value>JS</value>
 			</list>
 		</constructor-arg>
-
 	</bean>
 
-	<bean class="com.spring.core.constructor_injection.Addition" name="add">
+
+	<!-- here we cannot use p-type, instead we use c-type schema -->
+	<!-- https://mkyong.com/spring/how-to-inject-null-value-in-spring/ -->
+	<bean class="com.spring.core.constructor_injection.Person"
+		name="person2" c:name="Suman" c:age="20" c:certi-ref="cert">
+		<constructor-arg name="listOfCourses">
+			<null />
+		</constructor-arg>
+	</bean>
+
+
+	<!-- As we are defining the type and position, we are pin-pointing out constructor -->
+	<bean class="com.spring.core.constructor_injection.Addition"
+		name="add">
 		<constructor-arg value="40" type="int" index="1" />
 		<constructor-arg value="60" type="int" index="0" />
 		<!-- order can be interchanged via index -->
-
 	</bean>
-
-
 
 </beans>

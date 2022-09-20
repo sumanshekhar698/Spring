@@ -4,19 +4,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Worker {
-	@Qualifier("current")
-	@Autowired
+//	@Qualifier("current") // to pin point the dependency
+	@Autowired // uses "type" by default
 	private Address address;
+//	if there are multiple types available, if atleast one is matching the var name, 
+//	it will not give error else it will be ambiguous for multiple beans
 
 	public Address getAddress() {
 		return address;
 	}
-	
+
 //	@Autowired
 //	@Qualifier("permanent")//setter gets priority over properties
 	public void setAddress(Address address) {
-	System.out.println("Setters are used for injection");
-
+		System.out.println("Setters are used for injection");
 		this.address = address;
 	}
 
@@ -27,15 +28,14 @@ public class Worker {
 
 	public Worker() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 //	@Autowired
-	
-	public Worker(Address address3) {
+//	@Qualifier("permanent")// not allowed in Constructo
+	public Worker(Address address) {
 		super();
 		System.out.println("Parameterized constructor is used for injection");
-		this.address = address3;
+		this.address = address;
 	}
-	
+
 }

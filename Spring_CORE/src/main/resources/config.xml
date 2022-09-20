@@ -11,6 +11,7 @@
 
 	<!-- this is our 1st bean -->
 	<bean class="com.spring.core.springcore.Student" name="student1">
+		<!-- For setter injection we use property tag -->
 		<property name="studentId" value="6057" />
 		<property name="studentName">
 			<value>Suman</value>

@@ -3,8 +3,8 @@ package com.spring.core.lifecycle;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-/*lifecycle methods using interface
-*/public class CocaCola implements InitializingBean,DisposableBean{
+/*lifecycle methods using interface*/
+public class CocaCola implements InitializingBean, DisposableBean {
 	private double price;
 
 	public double getPrice() {
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.InitializingBean;
 	}
 
 	public void setPrice(double price) {
-		System.out.println("Seeting price of coke via setters");
+		System.out.println("Setting price of coke via setters");
 		this.price = price;
 	}
 
@@ -26,16 +26,13 @@ import org.springframework.beans.factory.InitializingBean;
 		return "CocaCola [price=" + price + "]";
 	}
 
+	// init code here
 	public void afterPropertiesSet() throws Exception {
-		// TODO Auto-generated method stub
-		//init code here 
-		System.out.println("taking Coke: init via interface");
+		System.out.println("INIT taking Coke: init via interface");
 	}
 
+	// destroy|cleanup code here
 	public void destroy() throws Exception {
-		// TODO Auto-generated method stub
-		//destroy code here
-		System.out.println("returning Coke bottle: destroy via interface");
-
+		System.out.println("DESTROY returning Coke bottle: destroy via interface");
 	}
 }

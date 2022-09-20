@@ -1,0 +1,5 @@
+# Project exclude paths
+/Spring_CORE/target/
+/Spring_JDBC/target/
+/Spring_ORM/target/
+/target/

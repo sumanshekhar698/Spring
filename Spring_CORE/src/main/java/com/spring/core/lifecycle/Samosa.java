@@ -1,6 +1,6 @@
 package com.spring.core.lifecycle;
-/*lifecycle methods using xml
-*/
+
+/*lifecycle methods using xml*/
 public class Samosa {
 	private double price;
 
@@ -22,13 +22,12 @@ public class Samosa {
 	public String toString() {
 		return "Samosa [price=" + price + "]";
 	}
-	
-	
+
 	public void hey() {
-		System.out.println("INSIDE -> renamed hey :p init() ");
+		System.out.println("INIT -> samosa renamed hey() via xml");
 	}
-	
+
 	public void destroy() {
-		System.out.println("INSIDE -> destroy() ");
+		System.out.println("DESTROY -> samosa destroy() via xml");
 	}
 }

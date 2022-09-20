@@ -1,4 +1,4 @@
-package com.spring.core.collections;
+package com.spring.core.injecting_collections;
 
 import java.util.List;
 import java.util.Map;
@@ -47,13 +47,13 @@ public class Employees {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Employees(String name, List<String> phones, Set<String> address, Map<String, String> course) {
-		super();
-		this.name = name;
-		this.phones = phones;
-		this.address = address;
-		this.course = course;
-	}
+//	public Employees(String name, List<String> phones, Set<String> address, Map<String, String> course) {
+//		super();
+//		this.name = name;
+//		this.phones = phones;
+//		this.address = address;
+//		this.course = course;
+//	}
 
 	public void setName(String name) {
 		this.name = name;
@@ -72,6 +72,7 @@ public class Employees {
 	}
 
 	public void setAddress(Set<String> address) {
+		System.out.println("Setting ===> address");
 		this.address = address;
 	}
 

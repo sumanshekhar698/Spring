@@ -1,5 +1,6 @@
 package com.spring.core.lifecycle;
-//lifecycle using @nnotation
+
+//lifecycle using @Annotation
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
@@ -21,23 +22,20 @@ public class BreadPakoda {
 		return "BreadPakoda [price=" + price + "]";
 	}
 
-	
-	
 	public BreadPakoda() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	
-	//for 9+ java have to mention the dependencies
+
+	// for 9+ java have to mention the dependencies
 	@PostConstruct
 	public void start() {
-		System.out.println("INIT methods using @nnotations");
+		System.out.println("INIT  Bread using @Annotations");
 	}
-	
+
 	@PreDestroy
-	public void end(){
-		System.out.println("DESTROY methods using @nnotations");
+	public void end() {
+		System.out.println("DESTROY Bread using @Annotations");
 
 	}
-	
+
 }

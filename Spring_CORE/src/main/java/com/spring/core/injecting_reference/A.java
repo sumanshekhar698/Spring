@@ -1,4 +1,4 @@
-package com.spring.core.reference;
+package com.spring.core.injecting_reference;
 
 public class A {
 	private int x;

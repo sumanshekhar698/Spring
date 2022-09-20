@@ -10,7 +10,7 @@
 
 
 	<!-- this is our 1st bean and we are injecting collections -->
-	<bean name="emp1" class="com.spring.core.collections.Employees">
+	<bean name="emp1" class="com.spring.core.injecting_collections.Employees">
 		<property name="name" value="Radhe" />
 		<property name="phones">
 			<list>
@@ -28,6 +28,7 @@
 		</property>
 
 		<property name="tags">
+			<!-- Creates an Empty List -->
 			<list>
 			</list>
 		</property>

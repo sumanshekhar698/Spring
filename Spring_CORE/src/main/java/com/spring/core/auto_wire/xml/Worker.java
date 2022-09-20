@@ -1,4 +1,4 @@
-package com.spring.core.auto_wire;
+package com.spring.core.auto_wire.xml;
 
 public class Worker {
 	private Address address;
@@ -8,7 +8,7 @@ public class Worker {
 	}
 
 	public void setAddress(Address address) {
-	System.out.println("Setters are used for injection");
+		System.out.println("Setters are used for injection");
 
 		this.address = address;
 	}
@@ -23,10 +23,11 @@ public class Worker {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Worker(Address address3) {
+//	public Worker(Address address3) {
+	public Worker(Address address) {
 		super();
 		System.out.println("Parameterized constructor is used for injection");
-		this.address = address3;
+		this.address = address;
 	}
-	
+
 }

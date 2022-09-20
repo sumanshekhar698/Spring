@@ -5,13 +5,21 @@
 		<artifactId>spring_basics</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	
+
 	<groupId>com.spring.core</groupId>
 	<artifactId>Spring_CORE</artifactId>
 	<name>Spring_CORE</name>
 	<description>This submodule deals with Spring core functionalites</description>
 	<packaging>jar</packaging>
-	
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+	</build>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -32,7 +40,7 @@
 			<version>5.3.3</version>
 		</dependency>
 
-		<!-- dependency to use annotation -->
+		<!-- dependency to use annotation frrom JDK9 +-->
 		<!-- @PostConstruct,@PreDestroy -->
 		<dependency>
 			<groupId>javax.annotation</groupId>

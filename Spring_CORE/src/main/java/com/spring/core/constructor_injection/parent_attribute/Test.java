@@ -10,9 +10,10 @@ public class Test {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"com/spring/core/constructor_injection/parent_attribute/config_ci2.xml");
+		Employee e1 = (Employee) context.getBean("e1");
 		Employee e2 = (Employee) context.getBean("e2");
 
-//		Employee e1 = (Employee) factory.getBean("e2");
+		e1.show();
 		e2.show();
 
 	}

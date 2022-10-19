@@ -9,19 +9,19 @@ public class TestConfigFree {
 		// TODO Auto-generated method stub
 
 		/*
-		 *** using xml
-		 * ApplicationContext context = new
+		 *** using xml ApplicationContext context = new ClassPathXmlApplicationContext
+		 * context = new
 		 * ClassPathXmlApplicationContext("com/spring/core/javaconfig/javaconfig.xml");
 		 * Student s1 = context.getBean("student",Student.class);
-		 * System.out.println(s1);
+		 * System.out.println(s1); context.close();
 		 */
 
 		ApplicationContext context = new AnnotationConfigApplicationContext(JavaConfig.class);
-		 Student s1 = context.getBean("getStudent",Student.class);
-		 // by default its method name but we can call it via specified names too
-		 System.out.println(s1);
-		 s1.study();
- 
+		Student s1 = context.getBean("getStudent", Student.class);
+		// by default its method name but we can call it via specified names too in teh
+		// names array
+		System.out.println(s1);
+		s1.study();
 
 	}
 

@@ -12,41 +12,24 @@ import org.springframework.context.annotation.Configuration;
  *  -> @ComponentScan(basePackages = "com.spring.core.javaconfig")
  * */
 
-
-
-
 @Configuration
 //No need to use @ComponentScan when using @Bean
-//@ComponentScan(basePackages = "com.spring.core.javaconfig")
+@ComponentScan(basePackages = "com.spring.core.javaconfig")
 public class JavaConfig {
-	
+
 //	using w/o declaring @Component on the class
 	@Bean
 //	@Bean(name = {"stud","student","schoolBuoy"})
 //	through these names we can access the beans
 	public Student getStudent() {
-		return  new Student();
-		
+		return new Student();
+
 	}
-	
+
 	@Bean
 	public Samosa getSamosa() {
-		return  new Samosa();
-		
+		return new Samosa();
+
 	}
 
 }
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-

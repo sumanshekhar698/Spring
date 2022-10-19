@@ -12,10 +12,8 @@
  http://www.springframework.org/schema/util/spring-util.xsd
  ">
 
-
 	<context:component-scan
 		base-package="com.spring.core.stereotype"></context:component-scan>
-
 
 	<util:list list-class="java.util.Vector" id="course">
 		<value>Spring</value>
@@ -26,6 +24,5 @@
 
 	<bean class="com.spring.core.stereotype.Teacher" name="teacher"
 		scope="prototype" />
-
 
 </beans>

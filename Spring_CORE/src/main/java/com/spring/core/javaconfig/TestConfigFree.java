@@ -18,7 +18,7 @@ public class TestConfigFree {
 
 		ApplicationContext context = new AnnotationConfigApplicationContext(JavaConfig.class);
 		Student s1 = context.getBean("getStudent", Student.class);
-		// by default its method name but we can call it via specified names too in teh
+		// by default its method name but we can call it via specified names too in the
 		// names array
 		System.out.println(s1);
 		s1.study();

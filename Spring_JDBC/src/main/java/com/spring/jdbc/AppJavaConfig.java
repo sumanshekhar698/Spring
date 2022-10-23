@@ -15,7 +15,6 @@ public class AppJavaConfig {
 
 //		via JAVA config
 		ApplicationContext context = new AnnotationConfigApplicationContext(SpringJDBCJavaConfig.class);
-
 		StudentDAO studentDAO = context.getBean("studentDAO", StudentDAO.class);// Gives the ready made class with all
 																				// the dependencies injected
 		List<Student> students = studentDAO.getMultipleStudent();

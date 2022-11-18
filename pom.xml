@@ -1,15 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.sumanshekhar</groupId>
-  <artifactId>spring_basics</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>Spring</name>
-  <description>Covers the topics for Basics of Spring</description>
-<!--  The parent project must have a packaging type of POM-->
-  <packaging>pom</packaging>
-  <modules>
-  	<module>Spring_CORE</module>
-  	<module>Spring_JDBC</module>
-  	<module>Spring_ORM</module>
-  </modules>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sumanshekhar</groupId>
+	<artifactId>SpringFrameworkCORE</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Spring</name>
+	<description>Covers the topics for Basics of Spring</description>
+
+	<!-- Essential for build as it takes JDK 5 sometiumes-->
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+
+	<!--  The parent project must have a packaging type of POM-->
+	<packaging>pom</packaging>
+	<modules>
+		<module>Spring_CORE</module>
+		<module>Spring_JDBC</module>
+		<module>Spring_ORM</module>
+	</modules>
 </project>

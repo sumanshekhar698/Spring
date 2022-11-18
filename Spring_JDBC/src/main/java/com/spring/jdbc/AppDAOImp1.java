@@ -23,7 +23,7 @@ public class AppDAOImp1 {
 //		INSERT using DAO
 //		****************************************************************
 		Student student = new Student();
-		student.setId(05);
+		student.setId(66);
 		student.setName("Ritika");
 //		student.setCity("Imphal");
 		
